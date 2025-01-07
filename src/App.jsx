@@ -8,6 +8,8 @@ import Dashboard from './components/Dashboard';
 import BookAppointment from './components/BookAppointment';
 import BookingConfirmation from './components/BookingConfirmation';
 import Header from './components/Header';
+import ForgotPassword from "./pages/ForgotPassword";
+
 
 
 export default function App(){
@@ -26,6 +28,7 @@ export default function App(){
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/book-appointment" element={<BookAppointment />} />
         <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
     </BrowserRouter>
   )

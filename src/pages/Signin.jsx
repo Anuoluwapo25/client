@@ -23,7 +23,7 @@ export default function Signin() {
     try {
       setLoading(true);
       setError(false);
-      const res = await fetch("http://127.0.0.1:8000/login/", {
+      const res = await fetch("http://127.0.0.1:8000/api/auth/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -89,6 +89,16 @@ export default function Signin() {
 
       <div className="flex gap-2 mt-5">
         <p>Don't have an account?</p>
+        <p>
+          Forgot password?{" "}
+          <span
+            onClick={() => navigate("/forgot-password")}
+            style={{ color: "blue", cursor: "pointer" }}
+          >
+            Reset it here
+          </span>
+        </p>
+
         <Link to="/signup">
           <span className="text-blue-500">Sign up</span>
         </Link>

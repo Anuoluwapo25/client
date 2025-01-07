@@ -235,7 +235,7 @@ export default function Dashboard() {
       const token = localStorage.getItem('token');
 
       // Fetch bookings from the Django backend
-      const response = await fetch('http://127.0.0.1:8000/booking/', {
+      const response = await fetch('http://127.0.0.1:8000/user-auth/booking/', {
         method: 'GET',
         headers: {
           'Authorization': `Token ${token}`,
@@ -255,7 +255,7 @@ export default function Dashboard() {
   const fetchUserProfile = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://127.0.0.1:8000/profile/', {
+      const response = await fetch('http://127.0.0.1:8000/user-auth/profile/', {
         method: 'GET',
         headers: {
           'Authorization': `Token ${token}`,

@@ -127,7 +127,7 @@ export default function Signup() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch("http://127.0.0.1:8000/user-auth/register/", {
+      const res = await fetch("http://127.0.0.1:8000/api/auth/register/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -155,16 +155,8 @@ export default function Signup() {
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Full Name"
-          id="name"
-          className="bg-slate-100 p-3 rounded-lg"
-          onChange={handleChange}
-        />
-
-        <input
-          type="text"
-          placeholder="Username"
-          id="username"
+          placeholder="first_name"
+          id="first_name"
           className="bg-slate-100 p-3 rounded-lg"
           onChange={handleChange}
         />
@@ -179,7 +171,7 @@ export default function Signup() {
 
         <input
           type="tel"
-          placeholder="Phone number"
+          placeholder="phone_number"
           id="phone_number"
           className="bg-slate-100 p-3 rounded-lg"
           onChange={handleChange}
@@ -195,11 +187,49 @@ export default function Signup() {
 
         <input
           type="text"
-          placeholder="Location"
-          id="location"
+          placeholder="country"
+          id="country"
           className="bg-slate-100 p-3 rounded-lg"
           onChange={handleChange}
         />
+
+        <input
+          type="text"
+          placeholder="state"
+          id="state"
+          className="bg-slate-100 p-3 rounded-lg"
+          onChange={handleChange}
+        />
+
+        <input
+          type="text"
+          placeholder="address"
+          id="address"
+          className="bg-slate-100 p-3 rounded-lg"
+          onChange={handleChange}
+        />  
+
+        <select
+          id="account_type"
+          className="bg-slate-100 p-3 rounded-lg"
+          onChange={handleChange}
+        >
+          <option value="" disabled selected>
+            Select Account Type
+          </option>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
+
+        <input
+          type="text"
+          placeholder="Enter Country Code (e.g., +234)"
+          id="country_code"
+          className="bg-slate-100 p-3 rounded-lg"
+          onChange={handleChange}
+        />
+
+
 
         <button 
           className="bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80"
